@@ -1,0 +1,28 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Launch development webserver",
+            "type": "shell",
+            "command": "zola",
+            "args": [
+                "serve",
+                "--drafts",
+                "--open"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Launch development webserver (without drafts)",
+            "type": "shell",
+            "command": "zola",
+            "args": [
+                "serve",
+                "--open"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}

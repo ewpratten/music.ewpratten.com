@@ -1,0 +1,23 @@
+base_url = "https://music.ewpratten.com"
+title = "Evan Pratten's Music"
+description = "The complete discography and historical music archive of Evan Pratten"
+default_language = "en"
+compile_sass = true
+build_search_index = true
+generate_feed = true
+feed_filename = "rss.xml"
+minify_html = false
+
+[markdown]
+highlight_code = true
+render_emoji = true
+external_links_target_blank = true
+
+[link_checker]
+skip_prefixes = []
+skip_anchor_prefixes = []
+internal_level = "error"
+external_level = "error"
+
+[extra]
+profile_photo = "https://branding.ewpratten.com/pfp/2022/460x460.webp"

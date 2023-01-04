@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{# Pass data through to the base template #}
+{% block variable_wormhole %}
+{{ super() }}
+{% set title = section.title %}
+{% set description = config.description %}
+{% if section.extra.uses %}
+{% set feature_flags = section.extra.uses %}
+{% endif %}
+{% endblock variable_wormhole %}
+
+{# Page content #}
+{% block content %}
+
+{% include "components/home-header.html" %}
+
+{# {{ section.content | safe }} #}
+{% endblock content %}
