@@ -9,7 +9,7 @@
         {% for release in all_releases %}
         <a href="{{release.path}}">
             <div class="release">
-                <img src="{{release.extra.cover}}" alt="Cover Image">
+                <img src="{{release.extra.cover}}" alt="Cover Image" loading="lazy">
                 <div class="release-info">
                     <h3>{{release.title}}</h3>
                     <p>
