@@ -1,0 +1,50 @@
+@import "../../vars.scss";
+
+.featured-release {
+  background-size: cover;
+  width: 100%;
+  border: 1px solid white;
+  background-position-y: 50%;
+
+  .featured-release-body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    backdrop-filter: blur(15px) brightness(0.5);
+
+    .info {
+      .release-title {
+        font-weight: 800;
+        font-size: 4em;
+        margin: 0;
+        padding: 0;
+      }
+      .release-artists {
+        font-weight: 600;
+        color: $title-gray;
+        margin: 0;
+        padding: 0;
+      }
+
+      .outlinks {
+        margin-top: 1em;
+        font-size: 2em;
+
+        a {
+          color: $title-gray;
+          &:hover {
+            color: white;
+          }
+        }
+      }
+    }
+    .artwork {
+      img {
+        max-width: 400px;
+        margin: 3em;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+}

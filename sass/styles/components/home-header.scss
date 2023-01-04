@@ -1,3 +1,5 @@
+@import "../../vars.scss";
+
 .home-header {
   display: flex;
   flex-direction: row;
@@ -33,7 +35,7 @@
       font-weight: 600;
       font-size: 1.5em;
       line-height: 1;
-      color: rgb(193, 193, 193);
+      color: $title-gray;
       margin: 0;
       margin-left: 3px;
       padding: 0;
@@ -43,7 +45,7 @@
       margin-left: 5px;
 
       a {
-        color: rgb(193, 193, 193);
+        color: $title-gray;
         &:hover {
           color: white;
         }

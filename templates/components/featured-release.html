@@ -1,0 +1,34 @@
+{# Get the most recent release #}
+{% set all_releases = get_section(path="releases/_index.md") %}
+{% set all_releases = all_releases.pages | sort(attribute="date") | reverse %}
+{% set latest_release = all_releases[0] %}
+
+<h2 style="font-weight:600;">Featured Release</h2>
+<div class="featured-release" style="background-image: url('{{latest_release.extra.cover}}');">
+    <div class="featured-release-body">
+        <div class="artwork">
+            <img src="{{latest_release.extra.cover}}" alt="Cover Image">
+        </div>
+        <div class="info">
+            <h2 class="release-title">{{latest_release.title}}</h2>
+            <h3 class="release-artists">
+                {% for artist in latest_release.extra.artists %}
+                {{artist}}
+                {% endfor %}
+            </h3>
+            <div class="outlinks">
+                {% if latest_release.extra.urls.spotify %}
+                <a href="{{latest_release.extra.urls.spotify}}" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+                {% endif %}
+                {% if latest_release.extra.urls.apple_music %}
+                <a href="{{latest_release.extra.urls.apple_music}}" target="_blank"><i
+                        class="fa-brands fa-apple"></i></a>
+                {% endif %}
+                {% if latest_release.extra.urls.youtube %}
+                <a href="{{latest_release.extra.urls.youtube}}" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<br>
