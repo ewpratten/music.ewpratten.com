@@ -1,0 +1,33 @@
+name: Build Website
+
+on:
+  push:
+    branches:
+      - "*"
+      # Master has its own set of build rules,
+      # and will eventually call this script on its own
+      - "!master"
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Build
+        uses: TonySpegel/zola-build-action@v1
+        env:
+          CONFIG_FILE: "config.toml"
+
+      - name: Disable Jekyll
+        run: sudo touch ./public/.nojekyll
+
+      - name: Delete dist gitignore
+        run: sudo rm -f ./public/dist/.gitignore
+
+      - name: Upload site as artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./public
