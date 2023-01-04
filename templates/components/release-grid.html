@@ -1,0 +1,23 @@
+{# Get the most recent release #}
+{% set all_releases = get_section(path="releases/_index.md") %}
+{% set all_releases = all_releases.pages | sort(attribute="date") | reverse %}
+
+<div>
+    <h2 style="font-weight:600;">All Releases</h2>
+    <br>
+    <div class="release-grid">
+        {% for release in all_releases %}
+        <a href="{{release.path}}">
+            <div class="release">
+                <img src="{{release.extra.cover}}" alt="Cover Image">
+                <div class="release-info">
+                    <h3>{{release.title}}</h3>
+                    <p>
+                        {{ release.extra.artists | join(sep=" & ") }}
+                    </p>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
