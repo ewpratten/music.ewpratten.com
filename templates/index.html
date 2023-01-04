@@ -13,10 +13,12 @@
 {# Page content #}
 {% block content %}
 
-{% include "components/home-header.html" %}
-{% include "components/featured-release.html" %}
-<br>
-{% include "components/release-grid.html" %}
+<div class="container">
+    {% include "components/home-header.html" %}
+    {% include "components/featured-release.html" %}
+    <br>
+    {% include "components/release-grid.html" %}
+</div>
 
 {# {{ section.content | safe }} #}
 {% endblock content %}

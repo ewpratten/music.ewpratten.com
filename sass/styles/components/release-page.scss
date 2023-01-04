@@ -1,0 +1,113 @@
+@import "../../vars.scss";
+
+.release-big {
+  //   background:
+  background-size: cover;
+  width: 100%;
+  height: min-content;
+  min-height: 100vh;
+
+  .wrapper {
+    backdrop-filter: blur(25px) brightness(0.5);
+    height: min-content;
+    width: 100%;
+    height: min-content;
+    min-height: 100vh;
+
+    .profile-photo {
+      padding-top: 2em;
+      margin-bottom: 2em;
+      margin-left: 2em;
+
+      a {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 2em;
+        color: $title-gray;
+        opacity: 0.5;
+
+        img {
+          border-radius: 100%;
+          width: 50px;
+        }
+        &:hover {
+          opacity: 0.75;
+        }
+      }
+    }
+
+    .release-big-content {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+      min-height: 80vh;
+
+      @media screen and (max-width: 1199px) {
+        display: block;
+        text-align: center;
+      }
+
+      .cover {
+        @media screen and (min-width: 1200px) {
+          margin: 3em;
+        }
+
+        img {
+          width: 100%;
+          max-width: 400px;
+          box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        p {
+          font-weight: 600;
+          color: $title-gray;
+          text-align: center;
+        }
+      }
+
+      .info {
+        @media screen and (min-width: 1200px) {
+          max-width: 700px;
+        }
+
+        .release-title {
+          font-weight: 800;
+          font-size: 4rem;
+          @media screen and (max-width: 450px) {
+            font-size: 2rem;
+          }
+          margin: 0;
+          padding: 0;
+        }
+        .release-artists {
+          font-weight: 600;
+          font-size: 1rem;
+          color: $title-gray;
+          margin: 0;
+          padding: 0;
+        }
+
+        .outlinks {
+          margin-top: 1em;
+          font-size: 2em;
+
+          p {
+            font-weight: 600;
+            font-size: 1rem;
+            color: $title-gray;
+            margin: 0;
+            padding: 0;
+          }
+
+          a {
+            color: $title-gray;
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

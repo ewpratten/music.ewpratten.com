@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+
+{# Pass data through to the base template #}
+{% block variable_wormhole %}
+{{ super() }}
+{% set title = page.title %}
+{% set description = page.description %}
+{% if page.extra.redir_to %}
+{% set redirect_target = page.extra.redir_to %}
+{% endif %}
+{% endblock variable_wormhole %}
+
+{# Page content #}
+{% block content %}
+
+<div class="release-big" style="background-image: url('{{page.extra.cover}}');">
+    <div class="wrapper">
+        <div class="profile-photo">
+            <a href="/"><i class="fa-solid fa-angles-left"></i></a>
+        </div>
+        <div class="release-big-content container">
+            <div class="cover">
+                <img src="{{page.extra.cover}}" alt="Cover Image">
+                <p>Released {{page.date}}</p>
+            </div>
+            <div class="info">
+                <h1 class="release-title">{{page.title}}</h1>
+                <h2 class="release-artists">{{ page.extra.artists| join(sep=" & ") }}</h2>
+                <div class="outlinks">
+                    <p>Listen On:</p>
+                    {% if page.extra.urls.spotify %}
+                    <a href="{{page.extra.urls.spotify}}" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+                    {% endif %}
+                    {% if page.extra.urls.apple_music %}
+                    <a href="{{page.extra.urls.apple_music}}" target="_blank"><i class="fa-brands fa-apple"></i></a>
+                    {% endif %}
+                    {% if page.extra.urls.youtube %}
+                    <a href="{{page.extra.urls.youtube}}" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{# {{ page.content | safe }} #}
+{% endblock content %}

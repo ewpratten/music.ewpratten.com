@@ -17,6 +17,7 @@
         width: 300px;
         height: 300px;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+        transition: box-shadow 0.25s ease;
       }
 
       .release-info {
@@ -29,11 +30,17 @@
           font-weight: 800;
         }
 
-        p{
+        p {
           margin: 0;
           padding: 0;
           font-weight: 600;
           color: $title-gray;
+        }
+      }
+
+      &:hover {
+        img {
+          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.8);
         }
       }
     }
